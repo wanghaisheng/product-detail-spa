@@ -1,0 +1,646 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;700&family=Lora:wght@600;700&family=Poppins:wght@300;500;600;700&display=swap');
+
+$primary: #9D6740;
+$secondary: #47362E;
+$sand: #FFFBF6;
+$dirtySand: #F3F0E9;
+$sandDark: #47362E;
+$light: #CDB1A3;
+$lightBrown: #CDB1A3;
+$caramel: #AC7E5C;
+$lighterCaramel: #BC9166;
+$darkOverlay : rgba(40, 38, 37, 0.8);
+
+$theme-colors: (
+  "overlay": rgba(40,38,37,.8)
+);
+
+$libreFranklin: 'Libre Franklin', sans-serif;
+$lora: 'Lora', serif;
+$poppins: 'Poppins', sans-serif;
+
+
+$btn-padding-y: 12px;
+$btn-padding-x:  44px;
+
+$input-bg: rgba(40, 38, 37, 0.8);
+
+
+@mixin font-scheme($font, $weight){
+  font-family: $font;
+  font-weight: $weight;
+}
+
+@mixin card-scheme($bgColor, $text){
+  background-color: $bgColor;
+  color: $text;
+}
+
+
+// Bootstrap SCSS
+@import "~bootstrap/scss/bootstrap.scss";
+
+
+html {
+  scroll-behavior: smooth!important;
+  overflow-x: hidden!important;
+}
+
+body {
+  overflow-x: hidden!important;
+}
+
+// Component styling
+.review-card{
+  background-color: $sand;
+  color: $secondary;
+}
+
+.feature-card {
+  @include font-scheme($poppins, 700 );
+  @include card-scheme($darkOverlay, $sand );
+  border: solid 1px $sand;
+  padding: 28px;
+  width: 100%;
+
+  span {
+    color: $primary
+  }
+
+  p {
+    @include font-scheme($libreFranklin, 500);
+    max-width: 300px;
+    line-height: 152.2%;
+  }
+}
+
+///  Home //////////////////////////////////////////////
+#home {
+  position: relative;
+  background: url("./assets/img/landingImg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 600px;
+
+  .dark-overlay {
+    background-color: rgba(0,0,0,0.17);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  nav {
+  
+    h3 {
+      color: $sand;
+      @include font-scheme($lora, 600)
+    }
+    span {
+      color: $lighterCaramel
+    }
+
+    ul {
+      @include font-scheme($libreFranklin, 400);
+
+      a {
+        color: $sand;
+      }
+
+      a:hover {
+        color: $lighterCaramel
+      }
+    }
+
+  }
+
+  #headline {
+      color: $sand;
+      align-items: center;
+      height: 300px;
+
+      .btn-half {
+        max-width: 300px;
+      }
+
+      h1 {
+        @include font-scheme($lora, 600)
+      }
+
+      span {
+        color: $lighterCaramel
+      }
+
+      p {
+        @include font-scheme($libreFranklin, 400);
+        line-height: 176.2%;
+      }
+  }
+  
+}
+
+///  About //////////////////////////////////////////////
+
+#about {
+  color: $sandDark;
+  margin-top: 10rem;
+
+  img {
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  h3 {
+    @include font-scheme($poppins, 700);
+    color: $primary;
+    span {
+      color: $sandDark
+    }
+  }
+
+  h4 {
+    @include font-scheme($poppins, 700);
+
+  }
+
+  p {
+    @include font-scheme($libreFranklin, 500);
+    line-height: 152.2%;
+  }
+
+  .row {
+    margin-bottom: 10rem;
+  }
+
+}
+
+///  Features //////////////////////////////////////////////
+#features {
+  position: relative;
+  background-image: url("./assets/img/featurepic.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 600px;
+
+  .dark-overlay {
+    background-color: rgba(0,0,0,0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  h2 {
+    @include font-scheme($lora, 600);
+    color: $sand
+  }
+}
+
+///  Menu //////////////////////////////////////////////
+#menu {
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+
+  .heading {
+    h4 {
+      @include font-scheme($poppins, 600);
+      color: $primary;
+      letter-spacing: 1.5px
+    }
+  
+    h2 {
+      @include font-scheme($lora, 600);
+      color: $sandDark
+    }
+  }
+
+  .categories {
+    div {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    .col-4 {
+      overflow: hidden;
+    }
+  }
+
+  .category {
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 200px;
+    transition: transform .3s;
+
+    h3 {
+      @include font-scheme($poppins, 700);
+      color: #fff;
+      letter-spacing: 2.5%;
+    }
+
+    .dark-overlay {
+      position: absolute;
+      background-color: rgba(0,0,0,0.4);
+      top: 0;
+      left: 15px;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .category:hover {
+    cursor: pointer;
+    transform: scale(1.1)
+  }
+
+  #menuItem {
+    h5 {
+      @include font-scheme($poppins, 700);
+      color: $secondary;
+      letter-spacing: 1px;
+
+      span {
+        color: $primary;
+        font-size: 16px;
+        margin-right: 3px;
+      }
+    }
+    
+  }
+
+ .menu-description {
+    @include font-scheme($lora, 600);
+    color: $lighterCaramel;
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+
+}
+
+///  Banner //////////////////////////////////////////////
+#banner {
+  position: relative;
+  background: url("./assets/img/bannerPic.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 400px;
+  margin-top: 10rem!important;
+
+  .dark-overlay {
+    background-color: rgba(0,0,0,0.35);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    h1 {
+      @include font-scheme($poppins, 700);
+      max-width: 500px;
+    }
+
+    h5 {
+      line-height: 152.2%;
+      max-width: 700px;
+    }
+    
+  }
+}
+
+///  Testimonials //////////////////////////////////////////////
+#testimonials {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  background-color: $dirtySand;
+  .review-slider {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .slick-track
+{
+    display: flex !important;
+}
+
+.slick-slide
+{
+    height: inherit !important;
+
+    div {
+      height: 100%!important;
+    }
+}
+
+.slick-dots {
+  li.slick-active{
+    button::before {
+      opacity: 1!important;
+   }
+  }
+
+  li {
+    button::before {
+    color: $primary;
+    font-size: 10px!important;
+  }
+}
+}
+
+.heading {
+  h4 {
+    @include font-scheme($poppins, 600);
+    color: $primary;
+    letter-spacing: 1.5px;
+  }
+
+  h2 {
+    @include font-scheme($lora, 600);
+    color: $secondary;
+  }
+}
+
+}
+
+///  Gallery //////////////////////////////////////////////
+#gallery {
+  padding-top: 5rem;
+  padding-bottom: 15rem;
+  background-color: $dirtySand;
+  .heading {
+    h4 {
+      @include font-scheme($poppins, 600);
+      color: $primary;
+      letter-spacing: 1.5px;
+    }
+  
+    h2 {
+      @include font-scheme($lora, 600);
+      color: $secondary;
+    }
+  }
+
+  img {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .container {
+    max-width: 1500px!important;
+  }
+
+  .zoom {
+    transition: transform .3s;
+  }
+
+  .zoom:hover {
+    transform: scale(1.1);
+  }
+
+  .col-lg-3 {
+    overflow: hidden!important;
+  }
+}
+
+// Contact ///////////////////////////////////////////////
+#contact {
+
+  position: relative;
+  background-image: url('./assets/img/contact.jpg');
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 800px;
+
+  .dark-overlay {
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 4rem;
+
+  }
+
+  .feature-card {
+    h3 {
+      @include font-scheme($poppins, 700);
+      letter-spacing: 1.5px;
+    }
+
+    h4 {
+      @include font-scheme($poppins, 500)
+    }
+
+    h4, p {
+     font-weight: 400!important;
+    }
+
+    p {
+      font-size: 15px;
+      @include font-scheme($poppins, 500)
+    }
+  }
+
+  .contact-form {
+    color: $sand;
+
+    h2 {
+      @include font-scheme($poppins, 700);
+      letter-spacing: 1px
+    }
+
+    h4 {
+      @include font-scheme($poppins, 500)
+    }
+
+    h5 {
+      @include font-scheme($poppins, 200);
+      font-size: 17px
+    }
+
+    textarea {
+      padding: 2rem!important;
+      color: white!important;
+      resize: none;
+    }
+  }
+
+  .copyright {
+    margin-top: 5rem;
+    color: $sand;
+    p {
+      @include font-scheme($lora, 500);
+      font-size: 32px;
+      a {
+        text-decoration: none;
+        color: $sand
+      }
+
+      a:hover {
+        color: $sand;
+      }
+
+    }
+    .ml-4 {
+      font-size: 24px!important;
+
+      span {
+        font-size: 16px;
+      }
+    }
+
+    
+  }
+
+}
+
+
+@media (max-width: 576px) {
+  #about {
+    margin-top:2rem!important;
+    text-align: center;
+  }
+
+  #contact {
+    h3 {
+      font-size: 20px!important;
+      text-align: center!important;
+    }
+    .schedule {
+      h4 {
+        font-size: 16px!important;
+      }
+    }
+
+    .contact-form {
+      text-align: center!important;
+
+    }
+  }
+  
+}
+
+@media (max-width: 768px) {
+  
+  #headline {
+    h1, p {
+      text-align: center!important;
+    }
+  }
+
+  .btn-half {
+    max-width: 100% !important;
+  }
+
+  #features{
+    .dark-overlay{
+      
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+
+    .col-md-4 {
+      margin-bottom: 3rem!important;
+    }
+  }
+
+  #menu {
+    .categories {
+      .category {
+        min-height: 100px!important;
+        border-width: 0px;
+        h3 {
+          font-size: 14px;
+        }
+      }
+      .col-4 {
+        height: 100px!important;
+        padding-left: 0rem;
+        padding-right: 0rem;
+        
+      }
+    }
+
+  }
+
+  #banner {
+    h1, h5 {
+      text-align: center!important;
+    }
+
+    h1 {
+      font-size: 28px;
+    }
+
+    h5 {
+      font-size: 16px;
+    }
+  }
+
+}
+
+@media (max-width: 992px) {
+  #about {
+    margin-top: 5rem;
+    text-align: center;
+
+  }
+
+  #features{
+    .feature-card {
+      margin: auto!important;
+
+    }
+
+    .dark-overlay {
+      background: none;
+      position: relative;
+    }
+  }
+
+  #gallery {
+    .row {
+      .col-lg-3 {
+        margin-bottom: 3rem!important;
+      }
+
+      .d-flex {
+        img {
+          margin-bottom: 3rem!important;
+        }
+      }
+    }
+
+    .zoom:hover {
+      transform: none!important;
+    }
+  }
+
+  #contact {
+    .dark-overlay {
+      position: relative;
+      background-color: rgba(0,0,0,0.5);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding-top: 10rem;
+      padding-bottom: 5rem;
+  
+    }
+
+  }
+}
+
+@media (max-width: 1200px) {
+
+}
